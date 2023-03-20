@@ -1,1 +1,1 @@
-# Amazon Business Research Analyst Use Case
+# Amazon Business Research Analyst UseCase
