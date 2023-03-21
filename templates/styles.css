@@ -1,0 +1,39 @@
+.navbar-brand{
+    font-size: 55px;
+    margin: 20px;
+    font-weight: 700;
+    margin-top:0 ;
+
+}
+nav{
+    background-color: aliceblue;
+}
+
+.form-label{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+
+h5{
+    padding-left: 37px;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 2.5rem;
+}
+.AmazonLogo{
+    height: 75px;
+    position: relative;
+    left: 1550px;
+    bottom: 55px;
+}
+
+.fa-business-time{
+    color: #FF9900;
+}
+
+.column{
+    background-color: aliceblue;
+}
+

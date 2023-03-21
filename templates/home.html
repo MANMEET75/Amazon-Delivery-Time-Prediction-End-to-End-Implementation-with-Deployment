@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/afcb52252c.js" crossorigin="anonymous"></script>
+
 
 
 
@@ -15,93 +17,168 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="styles.css">
 
     <title>ML Project</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+		.column {
+			float: left;
+			width: 100%;
+			padding: 10px;
+		}
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	</style>
 
 </head>
 
 <body>
 
-
-
-    <!-- As a heading -->
-    <nav class="navbar bg-body-tertiary">
+    <div class="row">
+		<div class="column">
+			<!-- Content for left column goes here -->
+             <!-- As a heading -->
+    <nav class="navbar">
         <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Time Taken to Deliver an Order(min)</span>
+            <span class="navbar-brand mb-0 h1"><i class="fa-solid fa-business-time"></i>TimeAhead</span>
         </div>
+        <img src="https://www.freepnglogos.com/uploads/amazon-png-logo-vector/amazon-png-logo-vector-1.png" alt="" class="AmazonLogo">
+        <marquee behavior="" direction=""><h5 class="mb-0">Developing a cutting-edge use case of Amazon Business Research Analyst that predicts the amount of time (in minutes) it will take a delivery person to fulfill an order.By using analytical skills and expertise in data science, We'll be able to help Amazon streamline their operations and provide their customers with even faster and more efficient service!</h5></marquee>
     </nav>
-    <div class="login">
-
-        <form action="{{ url_for('predict_datapoint')}}" method="post">
-        
+    <div class="login m-5">
+      
+        <form action="{{ url_for('predict_datapoint')}}" method="post" style="width: 50%;">
             <div class="mb-3">
-                <label class="form-label">Delivery_person_Age</label>
+                <label class="form-label">Age Of Delivery Person</label>
                 <input type="text" class="form-control" placeHolder="Enter Age of Delivery Person"
                     name="Delivery_person_Age" id="ageOfDeliveryPerson" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Delivery_person_Ratings</label>
+                <label class="form-label">Rating Of Delivery Person</label>
                 <input type="text" class="form-control" placeHolder="Enter Rating of Delivery Person"
-                    name="Delivery_person_Ratings" min="0" max="5" id="RatingOfDeliveryPerson" aria-describedby="emailHelp">
+                    name="Delivery_person_Ratings" min="0" max="5" id="RatingOfDeliveryPerson"
+                    aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Restaurant_latitude</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl"
-                    name="Restaurant_latitude" id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Restaurant Latitude</label>
+                <input type="text" class="form-control" placeHolder="Enter Restaurant Latitude"
+                    name="Restaurant_latitude" id="Restaurant_latitude" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Restaurant_longitude</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl"
-                    name="Restaurant_longitude" id="RestaurantLongitude" aria-describedby="emailHelp">
+                <label class="form-label">Restaurant Longitude</label>
+                <input type="text" class="form-control" placeHolder="Enter Restaurant Longitude"
+                    name="Restaurant_longitude" id="Restaurant_longitude" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Delivery_location_latitude</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl"
-                    name="Delivery_location_latitude" id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Delivery Location Latitude</label>
+                <input type="text" class="form-control" placeHolder="Enter Delivery Location Latitude"
+                    name="Delivery_location_latitude" id="Delivery_location_latitude" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Delivery_location_longitude</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl"
-                    name="Delivery_location_longitude" id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Delivery Location Longitude</label>
+                <input type="text" class="form-control" placeHolder="Enter Delivery Location Longitude"
+                    name="Delivery_location_longitude" id="Delivery_location_longitude" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Order_Date</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl" name="Order_Date"
-                    id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Order Date</label>
+                <input type="date" id="date-input" name="Order_Date" class="form-control" placeHolder="Select Order Date" name="Order_Date"
+                id="Order_Date">
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Time_Orderd</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl" name="Time_Orderd"
-                    id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Time When Order Placed</label>
+
+                <input type="time" id="time-input" name="Time_Orderd" class="form-control" placeHolder="Select the Time When Order Placed">
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Time_Order_picked</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl"
-                    name="Time_Order_picked" id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Time When Order Picked By Delivery Person</label>
+                <input type="time" id="time-input" name="Time_Order_picked" class="form-control" placeHolder="Select Time Of Order picked By Delivery Person"
+                name="Time_Order_picked" id="Time_Order_picked">
+
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">Weather Conditions</label>
+                <select class="form-control" name="Weather_conditions" placeholder="Weather Condition" required>
+                    <option class="placeholder" selected disabled value="">Select Weather Condition</option>
+                    <option value="Fog">
+                        Fog
+                    </option>
+                    <option value="Stormy">
+                        Stormy
+                    </option>
+                    <option value="Sandstorms">
+                        Sandstorms
+                    </option>
+                    <option value="Cloudy">
+                        Cloudy
+                    </option>
+                    <option value="Windy">
+                        Windy
+                    </option>
+                    <option value="Sunny">
+                        Sunny
+                    </option>
+
+                </select>
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Weather_conditions</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl"
-                    name="Weather_conditions" id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Road Traffic Density</label>
+                <select class="form-control" name="Road_traffic_density" placeholder="Road Traffic Density" required>
+                    <option class="placeholder" selected disabled value="">Select Road Traffic Density</option>
+                    <option value="Jam">
+                        Jam
+                    </option>
+                    <option value="High">
+                        High
+                    </option>
+                    <option value="Medium">
+                        Medium
+                    </option>
+                    <option value="Low">
+                        Low
+                    </option>
+               
+
+                </select>
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Type_of_order</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl"
-                    name="Type_of_order" id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Type Of Order</label>
+                <select class="form-control" name="Type_of_order" placeholder="Type_of_order" required>
+                    <option class="placeholder" selected disabled value="">Select Type Of Order</option>
+                    <option value="Snack">
+                        Snack
+                    </option>
+                    <option value="Meal">
+                        Meal
+                    </option>
+                    <option value="Drinks">
+                        Drinks
+                    </option>
+                    <option value="Buffet">
+                        Buffet
+                    </option>
+
+                </select>
 
             </div>
             <div class="mb-3">
-                <label class="form-label">Type_of_vehicle</label>
+                <label class="form-label">Type Of Vehicle Used By Delivery Person</label>
 
 
                 <select class="form-control" name="Type_of_vehicle" placeholder="City" required>
@@ -116,17 +193,16 @@
                         electric_scooter
                     </option>
                     <option value="bicycle">
-                        <option value="bicycle">
-
+                        bicycle
                     </option>
 
                 </select>
 
             </div>
             <div class="mb-3">
-                <label class="form-label">multiple_deliveries</label>
-                <input type="text" class="form-control" placeHolder="Enter Age of Delivery Boy/Girl"
-                    name="multiple_deliveries" id="RestaurantLatitude" aria-describedby="emailHelp">
+                <label class="form-label">Multiple Deliveries</label>
+                <input type="text" class="form-control" placeHolder="Enter Multiple Deliveries Secured By Delivery Person"
+                    name="multiple_deliveries" id="multiple_deliveries">
 
             </div>
             <div class="mb-3">
@@ -139,8 +215,6 @@
                     <option value="No">
                         No
                     </option>
-
-
                 </select>
 
 
@@ -167,100 +241,22 @@
 
 
 
-
-
-
-
-            <!-- 
-
-        <div class="mb-3">
-            <label class="form-label">Race or Ethnicity</label>
-            <select class="form-control" name="ethnicity" placeholder="Enter you ethnicity" required>
-                <option class="placeholder" selected disabled value="">Select Ethnicity</option>
-                <option value="group A">
-                    Group A
-                </option>
-                <option value="group B">
-                    Group B
-                </option>
-                <option value="group C">
-                    Group C
-                </option>
-                <option value="group D">
-                    Group D
-                </option>
-                <option value="group E">
-                    Group E
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Parental Level of Education</label>
-            <select class="form-control" name="parental_level_of_education"
-                placeholder="Enter you Parent Education" required>
-                <option class="placeholder" selected disabled value="">Select Parent Education</option>
-                <option value="associate's degree">
-                    associate's degree
-                </option>
-                <option value="bachelor's degree">
-                    bachelor's degree
-                </option>
-                <option value="high school">
-                    high school
-                </option>
-                <option value="master's degree">
-                    master's degree
-                </option>
-                <option value="some college">
-                    some college
-                </option>
-                <option value="some high school">
-                    some high school
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Lunch Type</label>
-            <select class="form-control" name="lunch" placeholder="Enter you Lunch" required>
-                <option class="placeholder" selected disabled value="">Select Lunch Type</option>
-                <option value="free/reduced">
-                    free/reduced
-                </option>
-                <option value="standard">
-                    standard
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Test preparation Course</label>
-            <select class="form-control" name="test_preparation_course" placeholder="Enter you Course"
-                required>
-                <option class="placeholder" selected disabled value="">Select Test_course</option>
-                <option value="none">
-                    None
-                </option>
-                <option value="completed">
-                    Completed
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Writing Score out of 100</label>
-            <input class="form-control" type="number" name="reading_score"
-                placeholder="Enter your Reading score" min='0' max='100' />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Reading Score out of 100</label>
-            <input class="form-control" type="number" name="writing_score"
-                placeholder="Enter your Reading Score" min='0' max='100' />
-        </div> -->
             <div class="mb-3">
-                <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
+                <input class="btn btn-dark" type="submit" value="Predict Delivery Time" required />
             </div>
         </form>
         <h2>
-            THE prediction is {{results}}
+            {{results}} (minutes)
         </h2>
+		</div>
+		<div class="column">
+			<!-- Content for right column goes here -->
+		</div>
+	</div>
+
+
+
+   
 
         <body>
 
