@@ -3,6 +3,8 @@
     margin: 20px;
     font-weight: 700;
     margin-top:0 ;
+    padding-top: 30px;
+    padding-left: 50px;
 
 }
 nav{
@@ -22,12 +24,6 @@ h5{
     font-size: 25px;
     line-height: 2.5rem;
 }
-.AmazonLogo{
-    height: 75px;
-    position: relative;
-    left: 1550px;
-    bottom: 55px;
-}
 
 .fa-business-time{
     color: #FF9900;
@@ -35,5 +31,22 @@ h5{
 
 .column{
     background-color: aliceblue;
+}
+
+
+
+#predictButton{
+    background-color: #FF9900;
+    color: #000;
+    font-weight: 700;
+    width: 100%;
+}
+
+.mlModelHeading{
+    position: relative;
+    left: 120px;
+    font-weight: 300;
+    bottom: 10px;
+
 }
 

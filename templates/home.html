@@ -47,12 +47,16 @@
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1"><i class="fa-solid fa-business-time"></i>TimeAhead</span>
         </div>
-        <img src="https://www.freepnglogos.com/uploads/amazon-png-logo-vector/amazon-png-logo-vector-1.png" alt="" class="AmazonLogo">
-        <marquee behavior="" direction=""><h5 class="mb-0">Developing a cutting-edge use case of Amazon Business Research Analyst that predicts the amount of time (in minutes) it will take a delivery person to fulfill an order.By using analytical skills and expertise in data science, We'll be able to help Amazon streamline their operations and provide their customers with even faster and more efficient service!</h5></marquee>
+        <h5 class="mlModelHeading">Machine Learning Application</h5>
+        <marquee behavior="" direction=""><h5 class="mb-0">Developing a cutting-edge use case of Amazon Business Research Analyst that predicts the amount of time (in minutes) it will take a delivery person to fulfill an order. By using analytical skills and expertise in data science, We'll be able to help Amazon streamline their operations and provide their customers with even faster and more efficient service!</h5></marquee>
     </nav>
+    
+  
     <div class="login m-5">
       
         <form action="{{ url_for('predict_datapoint')}}" method="post" style="width: 50%;">
+
+            
             <div class="mb-3">
                 <label class="form-label">Age Of Delivery Person</label>
                 <input type="text" class="form-control" placeHolder="Enter Age of Delivery Person"
@@ -240,18 +244,17 @@
 
 
 
+            <br>
 
             <div class="mb-3">
-                <input class="btn btn-dark" type="submit" value="Predict Delivery Time" required />
+                <input class="btn btn-dark" id="predictButton" type="submit" value="Predict Delivery Time (in minutes)" required />
             </div>
         </form>
         <h2>
-            {{results}} (minutes)
+            {{results}}
         </h2>
 		</div>
-		<div class="column">
-			<!-- Content for right column goes here -->
-		</div>
+	
 	</div>
 
 
