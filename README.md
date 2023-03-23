@@ -16,3 +16,21 @@ Deployed model using Amazon Elastic Beanstalk with .ebextension configuration fi
 ## Predicting On New Dataset
 
 <img src="sampleApp.gif" alt="sampleApplication">
+
+
+## Here are some ways you can use this model to improve the business and increase profit:
+
+1) Optimize delivery time: With the help of My model, Amazon can optimize delivery time by analyzing the factors that influence delivery time and taking corrective measures. This will result in a better customer experience, leading to increased customer satisfaction and loyalty, which in turn can result in increased sales and revenue.
+
+2) Reduce costs: By optimizing delivery time and reducing delays, Amazon can save costs associated with late deliveries, rerouting orders, and customer complaints. Additionally, the model can be used to optimize the supply chain, reduce the number of returns, and improve inventory management, resulting in further cost savings.
+
+3) Increase operational efficiency: The machine learning model can be used to improve the efficiency of the delivery process by optimizing routes, predicting demand, and reducing idle time. This will result in faster delivery times, better asset utilization, and increased throughput.
+
+4) Create new revenue streams: Amazon can leverage the insights gained from the model to create new revenue streams, such as offering premium delivery services or providing real-time tracking and notification services to customers.
+
+5) Enhance customer experience: By providing accurate delivery time estimates, Amazon can improve customer experience and increase loyalty. Additionally, the model can be used to personalize recommendations, offers, and promotions based on customer behavior and preferences.
+
+
+
+
+Overall, this machine learning model has the potential to bring significant business value to Amazon by improving operational efficiency, reducing costs, and enhancing the customer experience.
