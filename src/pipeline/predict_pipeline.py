@@ -40,6 +40,7 @@ class CustomData:
         Time_Order_picked: str,
         Weather_conditions: str,
         Road_traffic_density: str,
+        Vehicle_condition: int,
         Type_of_order: str,
         Type_of_vehicle: str,
         multiple_deliveries: int,
@@ -66,6 +67,7 @@ class CustomData:
         self.Time_Order_picked = Time_Order_picked
         self.Weather_conditions = Weather_conditions
         self.Road_traffic_density = Road_traffic_density
+        self.Vehicle_condition = Vehicle_condition
         self.Type_of_order = Type_of_order
         self.Type_of_vehicle = Type_of_vehicle
         self.multiple_deliveries = multiple_deliveries
@@ -87,6 +89,7 @@ class CustomData:
                 "Time_Order_picked": [self.Time_Order_picked],
                 "Weather_conditions": [self.Weather_conditions],
                 "Road_traffic_density": [self.Road_traffic_density],
+                "Vehicle_condition": [self.Vehicle_condition],
                 "Type_of_order": [self.Type_of_order],
                 "Type_of_vehicle": [self.Type_of_vehicle],
                 "multiple_deliveries": [self.multiple_deliveries],

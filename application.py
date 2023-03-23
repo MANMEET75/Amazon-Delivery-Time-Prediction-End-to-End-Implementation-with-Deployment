@@ -32,6 +32,7 @@ def predict_datapoint():
             Time_Order_picked=request.form.get('Time_Order_picked'),
             Weather_conditions=request.form.get('Weather_conditions'),
             Road_traffic_density=request.form.get('Road_traffic_density'),
+            Vehicle_condition=request.form.get('Vehicle_condition'),
             Type_of_order=request.form.get('Type_of_order'),
             Type_of_vehicle=request.form.get('Type_of_vehicle'),
             multiple_deliveries=request.form.get('multiple_deliveries'),

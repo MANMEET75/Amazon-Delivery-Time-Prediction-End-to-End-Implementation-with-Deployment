@@ -29,7 +29,7 @@ class DataTransformation:
         
         '''
         try:
-            numerical_columns = ['Delivery_person_Age','Delivery_person_Ratings','multiple_deliveries']
+            numerical_columns = ['Delivery_person_Age','Delivery_person_Ratings','multiple_deliveries','Vehicle_condition']
 
             categorical_columns_with_less_classes=['Weather_conditions','Road_traffic_density',
                                        'Type_of_order','Type_of_vehicle','Festival','City']
@@ -103,7 +103,7 @@ class DataTransformation:
             preprocessing_obj=self.get_data_transformer_object()
 
             target_column_name="Time_taken (min)"
-            numerical_columns = ['Delivery_person_Age','Delivery_person_Ratings','multiple_deliveries']
+            numerical_columns = ['Delivery_person_Age','Delivery_person_Ratings','multiple_deliveries','Vehicle_condition']
 
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
