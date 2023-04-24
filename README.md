@@ -4,6 +4,8 @@ I solved a use case for Amazon Business Research Analyst by predicting the deliv
 
 ## Research Environment
 In the research environment, I collected and cleaned data from Kaggle, performed exploratory data analysis, feature engineering, feature selection, and model building using regression algorithms with hyperparameter optimization for maximum accuracy. Open source libraries like category encoder and feature engine were used for reproducibility and robustness.
+#### To better understand the data, I created a useful dashboard using one of my favorite tools, Tableau.
+<img src="dv.png" alt="Dashboard that I have created while dealing with research environment to understand the data">
 
 ## Development Environment
 In the development environment, we convert our code into modular code and create a web application using Flask. We create a repository on GitHub, create a virtual environment using anaconda, and create multiple files for components like data ingestion, data transformation, model building, and prediction pipeline. We also build an interactive UI for the ML application using full stack web development skills.
