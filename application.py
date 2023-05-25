@@ -1,9 +1,8 @@
-from flask import Flask,request,render_template
-import numpy as np
-import pandas as pd
+from flask import Flask, request, render_template,jsonify
+from flask_cors import CORS,cross_origin
+from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
-from sklearn.preprocessing import StandardScaler
-from src.pipeline.predict_pipeline import CustomData,PredictPipeline
+
 
 application=Flask(__name__)
 
@@ -11,11 +10,13 @@ app=application
 
 ## Route for a home page
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html') 
+@app.route('/')
+@cross_origin()
+def home_page():
+    return render_template('home.html') 
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/predict',methods=['GET','POST'])
+@cross_origin()
 def predict_datapoint():
     if request.method=='GET':
         return render_template('home.html')
@@ -45,10 +46,10 @@ def predict_datapoint():
 
         predict_pipeline=PredictPipeline()
         results=predict_pipeline.predict(pred_df)
-        return render_template('home.html',results=results[0])
+        return render_template('home.html',results=results[0],pred_df=pred_df)
     
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0")        
+    app.run(host='0.0.0.0',port=8000)        
 
 
