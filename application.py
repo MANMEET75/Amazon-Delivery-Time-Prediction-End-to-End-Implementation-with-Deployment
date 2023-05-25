@@ -4,7 +4,7 @@ from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
 
 
-application=Flask(__name__,template_folder = 'template')
+application=Flask(__name__,template_folder = 'templates')
 
 app=application
 
