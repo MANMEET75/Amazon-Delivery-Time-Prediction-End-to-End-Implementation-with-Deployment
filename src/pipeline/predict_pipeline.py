@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 from src.exception import CustomException
+from src.logger import logging
 from src.utils import load_object
 
 from sklearn.preprocessing import StandardScaler
@@ -21,6 +22,7 @@ class PredictPipeline:
             return preds
         
         except Exception as e:
+            logging.info('Exception occured in prediction pipeline')
             raise CustomException(e,sys)
 
 
@@ -97,9 +99,10 @@ class CustomData:
                 "City": [self.City],
          
             }
-
+            logging.info('Dataframe Gathered')
             return pd.DataFrame(custom_data_input_dict)
 
         except Exception as e:
+            logging.info('Exception Occured in prediction pipeline')
             raise CustomException(e, sys)
 
