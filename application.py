@@ -8,8 +8,8 @@ application=Flask(__name__,template_folder = 'template')
 
 app=application
 
-## Route for a home page
 
+# creating the routes for the flask application
 @app.route('/')
 @cross_origin()
 def home_page():
